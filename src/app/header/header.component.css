@@ -1,0 +1,230 @@
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  overflow-x: hidden !important;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 2rem !important;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section__height {
+  height: 100vh !important;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 968px !important;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background-color: var(--container-color) !important;
+  z-index: var(--z-fixed) !important;
+  transition: 0.4s !important;
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.nav__img {
+  width: 32px !important;
+  border-radius: 50% !important;
+}
+
+.nav__logo {
+  color: var(--title-color) !important;
+  font-weight: 600 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    background-color: var(--container-color) !important;
+    box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15) !important;
+    width: 100% !important;
+    height: 4rem !important;
+    padding: 0 1rem !important;
+    display: grid !important;
+    align-content: center !important;
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    transition: 0.4s !important;
+  }
+}
+
+.nav__list,
+.nav__link {
+  display: flex !important;
+}
+
+.nav__link {
+  flex-direction: column !important;
+  align-items: center !important;
+  row-gap: 4px !important;
+  color: var(--title-color) !important;
+  font-weight: 600 !important;
+}
+
+.nav__list {
+  justify-content: space-around !important;
+}
+
+.nav__name {
+  font-size: var(--tiny-font-size) !important;
+  /* display: none;*/ /* Minimalist design, hidden labels */
+}
+header a {
+  text-decoration: none !important;
+  color: #000;
+}
+
+.nav__icon {
+  font-size: 1.5rem !important;
+}
+
+/*Active link*/
+.active-link {
+  position: relative !important;
+  /* color: var(--first-color) !important; */
+  transition: 0.3s !important;
+}
+
+/* Minimalist design, active link */
+/* .active-link::before{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    width: 4px;
+    height: 4px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+  } */
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15) !important;
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+@media screen and (max-width: 320px) {
+  .nav__name {
+    display: none !important;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__list {
+    justify-content: center;
+    column-gap: 3rem !important;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  body {
+    margin: 0 !important;
+  }
+  .section {
+    padding: 7rem 0 2rem !important;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem) !important; /* 4.5rem */
+  }
+  .nav__img {
+    display: none !important;
+  }
+  .nav__icon {
+    display: none !important;
+  }
+  .nav__name {
+    font-size: var(--normal-font-size) !important;
+    /* display: block; */ /* Minimalist design, visible labels */
+  }
+  .nav__link:hover {
+    color: var(--first-color) !important;
+  }
+
+  /* First design, remove if you choose the minimalist design */
+  .active-link::before {
+    content: "" !important;
+    position: absolute !important;
+    bottom: -0.75rem !important;
+    width: 4px !important;
+    height: 4px !important;
+    background-color: var(--first-color) !important;
+    border-radius: 50% !important;
+  }
+
+  /* Minimalist design */
+  .active-link::before {
+    bottom: -0.75rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

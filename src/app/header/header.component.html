@@ -1,0 +1,110 @@
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#" class="nav__logo">Alwaleed's Blog</a>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#home" class="nav__link active-link">
+            <i class="bx bx-home-alt nav__icon"></i>
+            <span class="nav__name">Home</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#about" class="nav__link">
+            <i class="bx bx-user nav__icon"></i>
+            <span class="nav__name">About</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#skills" class="nav__link">
+            <i class="bx bx-book-alt nav__icon"></i>
+            <span class="nav__name">Skills</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#portfolio" class="nav__link">
+            <i class="bx bx-briefcase-alt nav__icon"></i>
+            <span class="nav__name">Achievements</span>
+          </a>
+        </li>
+
+        <!-- <li class="nav__item">
+            <a href="#contactme" class="nav__link">
+              <i class="bx bx-message-square-detail nav__icon"></i>
+              <span class="nav__name">Contactme</span>
+            </a>
+          </li> -->
+      </ul>
+    </div>
+
+    <img
+      src="assets/img/me.jpg"
+      class="nav__img"
+      alt="a picture of me"
+      (click)="openModal()"
+    />
+  </nav>
+</header>
+<style>
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center; /* Center the text */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add some shadow */
+    animation: fadeIn 0.5s; /* Fade-in animation */
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Congratulations!</h2>
+    <p>You found a secret page!</p>
+    <p>Enjoy your stay and explore more hidden gems.</p>
+  </div>
+</div>
